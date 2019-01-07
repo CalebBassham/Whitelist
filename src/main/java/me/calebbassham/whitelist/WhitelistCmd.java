@@ -84,12 +84,14 @@ public class WhitelistCmd implements CommandExecutor, TabCompleter {
                 return Bukkit.getOnlinePlayers().stream()
                         .filter(player -> !player.isWhitelisted())
                         .map(Player::getName)
+                        .filter(s -> s.startsWith(args[1]))
                         .collect(Collectors.toList());
             }
 
             if (args[0].equalsIgnoreCase("remove")) {
                 return Bukkit.getWhitelistedPlayers().stream()
                         .map(OfflinePlayer::getName)
+                        .filter(s -> s.startsWith(args[1]))
                         .collect(Collectors.toList());
             }
         }
