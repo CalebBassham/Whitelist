@@ -1,0 +1,9 @@
+name: Whitelist
+version: 1.0.0-SNAPSHOT
+api-version: 1.13
+author: Caleb Bassham
+main: me.calebbassham.whitelist.WhitelistPlugin
+
+commands:
+  whitelist:
+    aliases: [wl]
