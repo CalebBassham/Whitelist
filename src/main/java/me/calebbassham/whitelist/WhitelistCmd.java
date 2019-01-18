@@ -64,6 +64,13 @@ public class WhitelistCmd implements CommandExecutor, TabCompleter {
                 sender.sendMessage(getPrefix() + Bukkit.getWhitelistedPlayers().stream().map(OfflinePlayer::getName).collect(Collectors.joining(", ")));
                 return true;
             }
+
+            if (args[0].equalsIgnoreCase("status")) {
+                sender.sendMessage(getPrefix() + getMainColorPallet().getHighlightTextColor() + "Whitelist " + getMainColorPallet().getPrimaryTextColor() +
+                        "is currently " + getMainColorPallet().getValueTextColor() + (Bukkit.hasWhitelist() ? "enabled" : "disabled") +
+                        getMainColorPallet().getPrimaryTextColor() + ".");
+                return true;
+            }
         }
 
         if (args.length == 2) {
@@ -104,7 +111,7 @@ public class WhitelistCmd implements CommandExecutor, TabCompleter {
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
         if (args.length == 1) {
-            return List.of("enable", "disable", "all", "clear", "list", "add", "remove").stream()
+            return List.of("enable", "disable", "all", "clear", "list", "add", "remove", "status").stream()
                     .filter(s -> s.startsWith(args[0]))
                     .collect(Collectors.toList());
         }
