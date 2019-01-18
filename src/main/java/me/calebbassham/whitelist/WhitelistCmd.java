@@ -39,7 +39,7 @@ public class WhitelistCmd implements CommandExecutor, TabCompleter {
             if (args[0].equalsIgnoreCase("all") || args[0].equalsIgnoreCase("*")) {
                 Bukkit.getOnlinePlayers().forEach(player -> player.setWhitelisted(true));
                 sender.sendMessage(getPrefix() + getMainColorPallet().getValueTextColor() + "All players" +
-                        getMainColorPallet() + " have been " + getMainColorPallet().getHighlightTextColor() + "added" +
+                        getMainColorPallet().getPrimaryTextColor() + " have been " + getMainColorPallet().getHighlightTextColor() + "added" +
                         getMainColorPallet().getPrimaryTextColor() + " to the " + getMainColorPallet().getHighlightTextColor() + "whitelist" +
                         getMainColorPallet().getPrimaryTextColor() + ".");
                 return true;
