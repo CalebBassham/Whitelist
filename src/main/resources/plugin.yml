@@ -8,4 +8,5 @@ depend: [PluginMessageFormat]
 
 commands:
   whitelist:
+    permission: whitelist.*
     aliases: [wl]
