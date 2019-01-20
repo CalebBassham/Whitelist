@@ -2,6 +2,7 @@ name: Whitelist
 version: 1.0.0-SNAPSHOT
 api-version: 1.13
 author: Caleb Bassham
+description: A plugin to manage the whitelist. Add, remove, enable, disable, check status, and clear are all available via command.
 main: me.calebbassham.whitelist.WhitelistPlugin
 depend: [PluginMessageFormat]
 
